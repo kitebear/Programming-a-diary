@@ -10,6 +10,10 @@
 
 ### 前端
 
+- [优化措施](https://github.com/kitebear/Programming-a-diary/blob/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E6%8E%AA%E6%96%BD.md)
+
+- [框架站点记录](https://github.com/kitebear/Programming-a-diary/blob/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6%E7%AB%99%E7%82%B9%E8%AE%B0%E5%BD%95.md)
+
 ###### React
 
 1. [React 有什么坑点？](https://github.com/kitebear/Programming-a-diary/blob/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/react/React%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%9D%91%E7%82%B9%EF%BC%9F.md)
@@ -30,11 +34,6 @@
 ###### 工具包
 
 1. [解析ES6语法](https://github.com/kitebear/Programming-a-diary/blob/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E5%B7%A5%E5%85%B7%E5%8C%85/%E8%A7%A3%E6%9E%90ES6%E8%AF%AD%E6%B3%95.md)
-
-
-
-- [优化措施](https://github.com/kitebear/Programming-a-diary/blob/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E6%8E%AA%E6%96%BD.md)
-- [框架站点记录](https://github.com/kitebear/Programming-a-diary/blob/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E6%A1%86%E6%9E%B6%E7%AB%99%E7%82%B9%E8%AE%B0%E5%BD%95.md)
 
 ------
 
