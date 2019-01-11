@@ -6,9 +6,9 @@
 3. 心得
 4. 生活
 
-- ------
+------
 
-  ###### [前端](https://github.com/kitebear/Programming-a-diary/tree/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0)
+- ###### [前端](https://github.com/kitebear/Programming-a-diary/tree/master/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0)
 
 - ###### [后端](https://github.com/kitebear/Programming-a-diary/tree/master/%E5%90%8E%E7%AB%AF)
 
@@ -30,4 +30,3 @@
 
 
 —————————  **谢思奇** ——————————
-
