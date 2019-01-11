@@ -22,7 +22,7 @@
 
 - ###### [生活](https://github.com/kitebear/Programming-a-diary/tree/master/life)
 
-- ###### [服务器](https://github.com/kitebear/Programming-a-diary/tree/master/%E8%BF%90%E7%BB%B4)
+- ###### [服务器](https://github.com/kitebear/Programming-a-diary/tree/master/%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
 - ###### [Job](https://github.com/kitebear/Programming-a-diary/tree/master/job)
 
@@ -30,4 +30,3 @@
 
 
 —————————  **谢思奇** ——————————
-
