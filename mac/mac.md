@@ -10,3 +10,4 @@
 >
 > 关闭显示隐藏功能defaults write com.apple.finder AppleShowAllFiles -bool false
 
+mac 下各种实用的软件[工具](https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md)
