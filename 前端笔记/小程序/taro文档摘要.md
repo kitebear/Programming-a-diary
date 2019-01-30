@@ -1,4 +1,4 @@
-## 项目使用[taro](https://taro.aotu.io/)开发 
+## 项目使用[Taro](https://taro.aotu.io/)开发 
 
 类似于React写法
 
