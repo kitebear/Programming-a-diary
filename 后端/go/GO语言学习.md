@@ -4,6 +4,8 @@
 4. [GO语言核心36讲](https://time.geekbang.org/column/article/12655)
 5. [Go Web 编程](https://www.kancloud.cn/kancloud/web-application-with-golang/44128)
 6. [GO 语言入门教程](https://songjiayang.gitbooks.io/go-basic-courses/content/ch5/custom.html) [禾木课堂](https://space.bilibili.com/276273794/)
+7. 该网站收集 Go 语言的各种应用[实例](https://golangexample.com/)。
+8. GO语言[高级编程](https://docs.hacknode.org/gopl-zh/ch0/ch0-01.html)
 
 在极客时间学习的时候，如果用的是网页版，我建议粘贴下列代码,这样可以吧播放键放在浏览器右侧中间的位置上，就可以在需要思考的时候随时暂停。
 

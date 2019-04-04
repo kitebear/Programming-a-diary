@@ -28,3 +28,4 @@ git clone --depth 1 https://github.com/golang/tools.git golang.org/x/tools
 export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
 ```
 
+GO 代理设置 https://www.jianshu.com/p/5f4cecaa08de
