@@ -1,5 +1,9 @@
 ## 使用mobx做国际化
 
+### **效果**
+
+![image-20190130155918427](http://media.kitebear.cn/ct/2019-01-30-075918.png)
+
 目前项目使用的是Taro做小程序开发框架，Taro可以集成mbox，当然一些正常的框架也可以集成mbox，只不过需要自己集成，或者用redux也可以用相同的思想实现。
 
 ### 思路
@@ -157,9 +161,3 @@ export default {
 如图，总共刷新了3次，每次3秒以后都会变成English
 
 ![](http://media.kitebear.cn/ct/2019-01-30-login1-30.gif)
-
-
-
-**首页效果**
-
-![image-20190130155918427](http://media.kitebear.cn/ct/2019-01-30-075918.png)
