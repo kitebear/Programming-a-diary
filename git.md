@@ -14,3 +14,16 @@ git fetch upstream
 git merge upstream/master
 git push 
 
+
+
+### 强制回滚
+
+git reset --hard 2216d4e
+
+// 查看git操作hash
+
+git reflog
+
+// 再回到feature-6
+
+git reset --hard cd52afc
