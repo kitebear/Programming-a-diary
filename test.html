@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <style>
+      .row_class {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+
+      .rows_1 {
+        width: 500px;
+        display: flex;
+      }
+
+      .main {
+        display: flex;
+      }
+
+      #content .rows_1 .addDiscount {
+        display: none;
+      }
+
+      #content .rows_1 input {
+        width: 50px;
+      }
+
+      #content .rows_1:last-child .addDiscount {
+        display: initial;
+      }
+
+      .discount-price {
+        display: flex;
+      }
+
+      .customNumber {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>促销形式：</span>
+      <span
+        ><input type="radio" name="radioType" id="radioID1" /><label
+          for="radioID1"
+          >折扣</label
+        ></span
+      >
+      <span
+        ><input type="radio" name="radioType" id="radioID2" /><label
+          for="radioID2"
+          >立减</label
+        ></span
+      >
+    </div>
+    <div class="main">
+      <div id="content"></div>
+    </div>
+    <button id="dataButton">获取当前添加的值</button>
+
+    <script>
+      var temp1 = `
+        <div class="rows_1">
+            <div class="row_class">
+                <div>
+                连住天数
+                </div>
+                <div>
+                <select class="live_day">
+                    <option value="2天">2天</option>
+                    <option value="3天">3天</option>
+                    <option value="4天">4天</option>
+                    <option value="5天以上">5天以上</option>
+                </select>
+                </div>
+            </div>
+            <div class="row_class">
+                <div>
+                设置优惠
+                </div>
+                <div>
+                  <select class="live_rebate">
+                      <option value="7折">7折</option>
+                      <option value="8折">8折</option>
+                      <option value="8.8折">8.8折</option>
+                      <option value="custom">自定义折扣</option>
+                  </select>
+                  <div class="customNumber" style="display:none;">
+                    <input type="text" />
+                    <span class="rule-percent">折</span>
+                  </div>
+                </div>
+            </div>
+            <button class="deleteDiscount">删除</button>
+            <button class="addDiscount">添加</button>
+        </div>
+    `;
+      var temp2 = `
+        <div class="rows_1">
+            <div class="row_class">
+                <div>
+                连住天数
+                </div>
+                <div>
+                <select class="live_day">
+                    <option value="dog">2天</option>
+                    <option value="cat">3天</option>
+                    <option value="hamster">4天</option>
+                    <option value="parrot">5天以上</option>
+                </select>
+                </div>
+            </div>
+            <div class="row_class">
+                <div>
+                设置优惠
+                </div>
+                <div class="discount-price">
+                    <input type="text" placeholder="建议立减55元以上" />
+                    <span class="rule-percent">元</span>
+                </div>
+            </div>
+            <button class="deleteDiscount">删除</button>
+            <button class="addDiscount">添加</button>
+        </div>
+    `;
+      // 用来存储折扣或者立减的状态
+      var discountStore = null;
+      var standStore = null;
+
+      // 1 为折扣  2 为立减
+      var discountType = null;
+
+      // 点击折扣以后的效果
+      $("#radioID1").click(function() {
+        // radio从立减点到折扣，存储html, 如果不需要刻意去掉
+        if (discountType === 2) {
+          standStore = $content.html();
+        }
+        discountType = 1;
+        // 如果之前有寸就直接用
+        $content.html(discountStore || temp1);
+      });
+      // 点击立减以后的效果
+      $("#radioID2").click(function() {
+        // radio从折扣点到立减，存储html, 如果不需要刻意去掉
+        if (discountType === 1) {
+          discountStore = $content.html();
+        }
+        discountType = 2;
+        $content.html(standStore || temp2);
+      });
+
+      // 点击添加当前值
+      $("#dataButton").click(function() {
+        var list = [];
+        var check_day_repeat = false
+        $("#content .rows_1").each(function() {
+          // 获取当前的元素
+          var $this = $(this);
+          var o = {};
+          var day_value = $this.find(".live_day").val()
+          // 如果是第一种模式获取数据方式
+          if (discountType === 1) {
+            o = {
+              day: day_value,
+              ratio: $this.find(".live_rebate").val(),
+            };
+            if ($this.find(".live_rebate").val() === "custom") {
+              o.ratio = $this.find("input").val()
+            }
+            // $this.find("input")
+            // 否则为第二种方式
+          } else if (discountType === 2) {
+            o = {
+              day: day_value,
+              // 优惠金额
+              amount: $this.find("input").val(),
+            };
+          }
+
+          // 判断是否有重复数据，有重复数据则做标记
+          var isRepeatList = (list.filter(function (v) {
+            return v.day === day_value
+          })).length
+
+          if (isRepeatList) {
+            check_day_repeat = true
+          }
+
+          list.push(o);
+        });
+
+        if (check_day_repeat) {
+          alert('请检查是否有重复天数！')
+        } else {
+          alert(JSON.stringify(list));
+        }
+
+      });
+
+      var $content = $("#content");
+
+      // 点击删除的事件委托
+      $content.delegate(".deleteDiscount", "click", function() {
+        // 如果只剩最后一项，则不能删除
+        if ($(".rows_1").length === 1) {
+          return;
+        }
+        // 删除当前元素
+        $(this)
+          .parent()
+          .remove();
+      });
+
+      // 点击添加的事件委托
+      $content.delegate(".addDiscount", "click", function() {
+        // 如果选择立减，责添加立减的
+        if (discountType === 2) {
+          $content.append(temp2);
+          return;
+        }
+        $content.append(temp1);
+      });
+
+      // 处理如果为自定义扣款的情况
+      $content.delegate(".live_rebate", "change", function() {
+        // 如果为自定义则显示后边的折扣，否则隐藏
+        if ($(this).val() === 'custom') {
+          $(this).next().show()
+        } else {
+          $(this).next().hide()
+        }
+      });
+    </script>
+  </body>
+</html>
