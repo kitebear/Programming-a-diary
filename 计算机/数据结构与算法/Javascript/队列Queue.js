@@ -8,36 +8,63 @@
  */
 
 class Queue {
-    constructor () {
-        this.lastcount = 0
-        this.count = 0
-        this.items = {}
-    }
-    // 存
-    enqueue (item) {
-        this.items[this.count] = item
-        this.count++
-    }
-    // 取
-    dequeue () {
-        const result = this.items[this.lastcount]
-        delete this.items[this.lastcount]
-        this.lastcount++
-        return result
-    }
+  constructor() {
+    this.lastindex = 0;
+    this.count = 0;
+    this.items = {};
+  }
+  // 存
+  enqueue(item) {
+    this.items[this.count] = item;
+    this.count++;
+  }
+  // 取
+  dequeue() {
+    const result = this.items[this.lastindex];
+    delete this.items[this.lastindex];
+    this.lastindex++;
+    return result;
+  }
 
-    peek () {
-        if (!this.isEmpty()) {
-            return undefined
-        }
-        return this.items[this.lastcount]
+  peek() {
+    if (this.isEmpty()) {
+      return undefined;
     }
+    return this.items[this.lastindex];
+  }
 
-    size () {
-        return this.count - this.lastcount
-    }
+  size() {
+    return this.count - this.lastindex;
+  }
 
-    isEmpty () {
-        return this.size() === 0
+  isEmpty() {
+    return this.size() === 0;
+  }
+
+  clear() {
+    this.count = 0;
+    this.items = {};
+    this.lastindex = 0;
+  }
+  toString() {
+    if (this.isEmpty()) {
+      return "";
     }
+    let objString = `${this.items[this.lastindex]}`;
+    for (let index = this.lastindex + 1; index < this.count; index++) {
+      objString = `${objString}${this.items[index]}`;
+    }
+    return objString;
+  }
 }
+
+var q = new Queue();
+q.enqueue("1");
+q.enqueue("2");
+q.enqueue("3");
+q.enqueue("4");
+console.log(q);
+console.log(q.toString());
+q.dequeue()
+q.dequeue()
+console.log(q.toString());
