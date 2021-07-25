@@ -58,13 +58,15 @@ class Queue {
   }
 }
 
-var q = new Queue();
-q.enqueue("1");
-q.enqueue("2");
-q.enqueue("3");
-q.enqueue("4");
-console.log(q);
-console.log(q.toString());
-q.dequeue()
-q.dequeue()
-console.log(q.toString());
+// var q = new Queue();
+// q.enqueue("1");
+// q.enqueue("2");
+// q.enqueue("3");
+// q.enqueue("4");
+// console.log(q);
+// console.log(q.toString());
+// q.dequeue()
+// q.dequeue()
+// console.log(q.toString());
+
+module.exports.Queue = Queue
