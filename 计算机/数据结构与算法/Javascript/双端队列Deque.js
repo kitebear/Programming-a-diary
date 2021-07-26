@@ -84,7 +84,11 @@ class Deque {
   q.addFront("4");
   q.addBack("3");
   q.addFront("4");
-  console.log(q.toString());
+  // console.log(q.toString());
   q.removeFront()
   q.removeFront()
-  console.log(q.toString());
+  // console.log(q.toString());
+
+  module.exports = {
+    Deque
+  }
