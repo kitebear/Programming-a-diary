@@ -1,0 +1,16 @@
+1. ### vscode 里面怎么根据Eslint来格式化代码？
+
+   文件 => 首选项 => 设置 => 搜索eslint => Eslint:Format Enable选项勾上
+
+   <img src="http://media.kitebear.cn//img/20211008002040.png?imageslim"  />
+
+   进入编码文件右键，点击使用...格式化文档
+
+   <img src="http://media.kitebear.cn//img/20211008002807.png?imageslim" style="zoom:50%;" />
+
+   选择默认程序为Eslint就可以了
+
+   ![](http://media.kitebear.cn//img/20211008002933.png?imageslim)
+
+2. 
+
